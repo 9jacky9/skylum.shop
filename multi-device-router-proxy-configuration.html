@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>家庭与团队多设备翻墙：OpenWrt 软路由透明代理全流程实操 | 极速研报</title>
+  <meta name="description" content="手把手教你配置 x86 软路由与 OpenWrt 系统，利用 PassWall / OpenClash 搭建全屋透明代理网关，实现手机、电脑、电视盒子免客户端自动分流。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="store-header">
+    <div class="store-header-inner">
+      <a href="index.html" class="velocity-logo-link">
+        <svg class="velocity-symbol" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Skylumo 徽标">
+          <rect x="4" y="4" width="32" height="32" rx="4" fill="#0f172a"/>
+          <path d="M8 32L26 8H32L14 32H8Z" fill="#e11d48"/>
+          <polygon points="18,12 28,12 24,18 14,18" fill="#ffffff"/>
+        </svg>
+        <div class="velocity-text-box">
+          <span class="velocity-brand-title">SKYLUMO</span>
+          <span class="velocity-sub-badge">VELOCITY NETWORK STORE</span>
+        </div>
+      </a>
+
+                  <!-- 移动端汉堡菜单触发复选框 (零 JS 原生响应式切换) -->
+      <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="切换导航菜单">
+
+<nav class="store-nav">
+        <a href="index.html#velocity" class="store-nav-link">极致速度体验</a>
+        <a href="index.html#ecosystem" class="store-nav-link">AI与流媒体</a>
+        <a href="index.html#pricing" class="store-nav-link">官方爆款套餐</a>
+        <a href="index.html#faq" class="store-nav-link">常见选购疑问</a>
+        <a href="index.html#reviews" class="store-nav-link">买家真实反馈</a>
+        <a href="velocity-reports.html" class="store-nav-link active">极速研报</a>
+      </nav>
+
+      <div class="store-header-cta">
+        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-store btn-crimson">
+          立即开通
+        </a>
+        <label for="mobile-nav-toggle" class="mobile-nav-btn" aria-label="切换菜单">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </label>
+      </div>
+      
+      <!-- 移动端全景导航抽屉 (点击汉堡图标时展开) -->
+      <div class="mobile-nav-drawer">
+        <div class="mobile-drawer-inner">
+          <a href="index.html#speed" class="mobile-drawer-link">
+            <span class="drawer-link-title">极致速度体验</span>
+            <span class="drawer-link-sub">万兆物理专线跨境直连</span>
+          </a>
+          <a href="index.html#media-ai" class="mobile-drawer-link">
+            <span class="drawer-link-title">AI与流媒体</span>
+            <span class="drawer-link-sub">Sora大模型与电商直播</span>
+          </a>
+          <a href="index.html#plans" class="mobile-drawer-link">
+            <span class="drawer-link-title">官方爆款套餐</span>
+            <span class="drawer-link-sub">热销年度直通车特惠</span>
+          </a>
+          <a href="index.html#faq" class="mobile-drawer-link">
+            <span class="drawer-link-title">常见选购疑问</span>
+            <span class="drawer-link-sub">客户端支持与售后保障</span>
+          </a>
+          <a href="index.html#reviews" class="mobile-drawer-link">
+            <span class="drawer-link-title">买家真实反馈</span>
+            <span class="drawer-link-sub">跨境电商与玩家好评</span>
+          </a>
+          <a href="velocity-reports.html" class="mobile-drawer-link">
+            <span class="drawer-link-title">极速研报</span>
+            <span class="drawer-link-sub">技术白皮书与硬核拆解</span>
+          </a>
+        </div>
+      </div>
+    </div></header>
+
+  <main class="report-paper-container">
+    <div class="report-breadcrumbs">
+      <a href="index.html">商城首页</a> &gt; <a href="velocity-reports.html">极速研报</a> &gt; 软路由透明代理全流程
+    </div>
+
+    <article class="report-main-paper">
+      <h1 class="report-heading-large">家庭与团队多设备翻墙：OpenWrt 软路由透明代理全流程实操</h1>
+      
+      <div class="report-meta-row">
+        <span>作者：嵌入式软路由极客</span>
+        <span>•</span>
+        <span>发布时间：2026-10-18</span>
+        <span>•</span>
+        <span>分类：硬件玩家 / OpenWrt / 全局透明代理</span>
+      </div>
+
+      <div class="report-body">
+        <p>
+          在当今智能设备遍地开花的家庭或初创工作室环境中，每个人身边都环绕着手机、平板、笔记本、台式机、游戏主机以及客厅的智能电视。如果每台设备都需要分别安装客户端、导入订阅、每天开机手动点击连接，不仅操作极其繁琐繁重，更重要的是很多特殊设备（如 Switch、PS5、部分智能音箱）根本无法安装第三方客户端。搭建一台全天候静默运行的 OpenWrt 软路由，实现全局“透明代理”，是终极的极客网络形态。
+        </p>
+
+        <h2>什么是软路由透明代理及其核心优势</h2>
+        <p>
+          “透明代理”（Transparent Proxy）是指网关设备在网络协议栈底层直接拦截并重定向数据包，而终端设备对此完全无感：
+        </p>
+
+        <h3>全设备开机即用，零客户端安装门槛</h3>
+        <p>
+          无论是亲友来访连接 Wi-Fi，还是新购入的 iPad 开箱，无需安装任何繁杂软件，只要连接上路由器，所有合规海外流量自动静默加速，体验与身处海外本土完全一致。
+        </p>
+
+        <h3>硬件级算力释放与性能保障</h3>
+        <p>
+          基于标准 Linux 内核体系（参考 <a href="https://openwrt.org/" target="_blank">OpenWrt 官方技术维基</a>），搭载 Intel N100 或 J4125 的 x86 软路由具备数倍于普通硬路由处理器的强悍算力。即便全家同时开启数台设备并发拉取 4K 视频流，CPU 占用率也始终被压制在 10% 以内，彻底告别单机客户端发热掉电。想要挑选适合软路由高并发接入的节点服务，推荐参考最新的 <a href="https://tizilab.net/" target="_blank">好用梯子机场排行榜</a>。
+        </p>
+
+        <h2>软路由透明网关标准搭建三步法</h2>
+        <p>
+          整个部署过程逻辑严密，建议遵循以下清晰的工程节奏：
+        </p>
+
+        <h3>第一步：基础网络与旁路由（Gateway）模式设定</h3>
+        <p>
+          如果不想改动家中原有的光猫和主路由拨号环境，“旁路由（单臂路由）”是风险最小的优雅架构。只需将软路由的 LAN 口用一根网线接入主路由 LAN 口，关闭软路由自身的 DHCP 服务，并将软路由静态 IP 设为主路由网段内（如 192.168.1.2）。
+        </p>
+
+        <h3>第二步：部署核心分流插件（OpenClash / PassWall）</h3>
+        <p>
+          在 OpenWrt 后台中安装现代分流管理核心。将专线服务商提供的专属通用订阅地址复制粘贴至配置订阅管理中，拉取全部节点列表，并开启“定时自动更新节点与规则集”。
+        </p>
+
+        <h3>第三步：内核运行模式与 DNS 调优关键</h3>
+        <p>
+          在插件设置中，运行模式强烈推荐勾选“Fake-IP (TUN-混合模式)”。开启此模式后，软路由在本地接管所有设备的 DNS 解析与 UDP/TCP 转发请求，国内网站解析走运营商原生 DNS（如 119.29.29.29），海外流媒体走专线远程纯净递归，速度快且完全免疫 DNS 劫持。
+        </p>
+
+        <h2>终端接入体验与常见避坑要点</h2>
+        <p>
+          配置完成后，只需将需要加速的电脑、电视盒子或手机的网络设置中，将“默认网关”和“首选 DNS”手动修改为软路由的静态 IP 地址（如 192.168.1.2）。立刻打开 Apple TV 上的 Netflix 4K 或电脑上的 Claude 网页，即刻秒级唤醒，如同行云流水般自然。
+        </p>
+        <p>
+          需要特别注意的是，在家庭存在 PS5 或 Switch 主机的环境中，建议在 OpenClash 中将游戏主机 IP 设为黑名单直连或开启 FullCone NAT 模式，以确保主机联机对战获得最高等级的 NAT Type A 体验，杜绝联机房间无法加入的问题。
+        </p>
+
+        <h2>总结：打造一次部署、永久省心的全屋网络</h2>
+        <p>
+          网络技术本应默默服务于人，而非让人成为工具的奴隶。通过打造一套高可靠的 OpenWrt 软路由透明网关，将繁琐的节点维护全部收拢在后台角落，赋予家庭与团队成员最纯粹、最宁静的高速数字生活。
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="store-bottom-colophon">
+    <div class="store-bottom-inner">
+      <nav class="store-bottom-nav" aria-label="页尾导航">
+        <a href="sitemap.html" class="store-bottom-link">网站地图</a>
+        <a href="about.html" class="store-bottom-link">关于我们</a>
+        <a href="terms.html" class="store-bottom-link">服务条款</a>
+        <a href="privacy.html" class="store-bottom-link">隐私政策</a>
+      </nav>
+      <div class="store-copy-tag">
+        © 2026 Skylumo Velocity Store. 极速专线，畅联无界。
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // 移动端全景导航联动闭合（零框架原生高敏脚本）
+  document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.getElementById('mobile-nav-toggle');
+    if (!toggle) return;
+    document.querySelectorAll('.mobile-drawer-link, .nav-link, .editorial-nav-link, .store-nav-link').forEach(function(el) {
+      el.addEventListener('click', function() {
+        toggle.checked = false;
+      });
+    });
+  });
+  </script>
+</body>
+</html>

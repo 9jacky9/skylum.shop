@@ -1,0 +1,1277 @@
+/* ==========================================================================
+   SKYLUMO (skylum.shop) - Bold Athletic Velocity & Kinetic Commerce System
+   Target Performance: <1000ms on 4G | 100% Native Pure CSS | Zero External Libs
+   ========================================================================== */
+
+:root {
+  --store-bg: #f8fafc;
+  --store-card: #ffffff;
+  --store-dark: #0f172a;
+  --store-crimson: #e11d48;
+  --store-crimson-hover: #be123c;
+  --store-crimson-tint: #ffe4e6;
+  --store-amber: #d97706;
+  --store-amber-bg: #fef3c7;
+  --store-text: #0f172a;
+  --store-muted: #64748b;
+  --store-border: #e2e8f0;
+  --store-border-bold: #cbd5e1;
+  --font-store: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-price: "DIN", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-store);
+  background-color: var(--store-bg);
+  color: var(--store-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 顶部热卖限时公告跑马条 */
+.promo-ticker-strip {
+  background-color: var(--store-dark);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ticker-highlight {
+  background-color: var(--store-crimson);
+  color: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* 商业极速 Header */
+.store-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--store-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.store-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 融合 Logo：疾速光轨切割字标 */
+.velocity-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--store-text);
+}
+
+.velocity-symbol {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.velocity-text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.velocity-brand-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--store-dark);
+  line-height: 1;
+}
+
+.velocity-sub-badge {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--store-crimson);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.store-header-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+/* 极速电商按钮 */
+.btn-store {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.btn-crimson {
+  background-color: var(--store-crimson);
+  color: #ffffff;
+  border: 1px solid var(--store-crimson);
+}
+
+.btn-crimson:hover {
+  background-color: var(--store-crimson-hover);
+  border-color: var(--store-crimson-hover);
+}
+
+.btn-speed-ghost {
+  background-color: #ffffff;
+  color: var(--store-dark);
+  border: 2px solid var(--store-dark);
+}
+
+.btn-speed-ghost:hover {
+  background-color: var(--store-dark);
+  color: #ffffff;
+}
+
+/* 动能 Hero：双列急速购买展示 */
+.hero-rapid-checkout {
+  background: #ffffff;
+  border-bottom: 1px solid var(--store-border);
+  padding: 4rem 1.5rem 3.5rem;
+}
+
+.hero-rapid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-rapid-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.flash-sale-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--store-crimson-tint);
+  color: var(--store-crimson);
+  font-weight: 800;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #fecdd3;
+  letter-spacing: 0.04em;
+}
+
+.hero-rapid-title {
+  font-size: 2.875rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--store-dark);
+}
+
+.hero-rapid-title span {
+  color: var(--store-crimson);
+}
+
+.hero-rapid-subtitle {
+  font-size: 1.125rem;
+  color: var(--store-muted);
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+.hero-rapid-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Hero 右侧即购规格选择器 */
+.hero-checkout-card {
+  background-color: var(--store-bg);
+  border: 2px solid var(--store-dark);
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: 6px 6px 0px var(--store-dark);
+}
+
+.checkout-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--store-border);
+}
+
+.checkout-deal-tag {
+  background-color: var(--store-amber-bg);
+  color: var(--store-amber);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2px;
+}
+
+.deal-price-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.deal-main-price {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--store-crimson);
+  font-family: var(--font-price);
+  line-height: 1;
+}
+
+.deal-orig-price {
+  font-size: 1.125rem;
+  color: var(--store-muted);
+  text-decoration: line-through;
+}
+
+.checkout-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.75rem;
+}
+
+.perk-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--store-text);
+}
+
+.perk-dot-square {
+  width: 8px;
+  height: 8px;
+  background-color: var(--store-crimson);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* 核心优势板块（极致速度体验 + 45° 切角几何 SVG） */
+.store-section-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+
+.store-section-header {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.store-sec-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--store-crimson);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.store-sec-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--store-dark);
+}
+
+.store-sec-desc {
+  font-size: 1rem;
+  color: var(--store-muted);
+}
+
+/* 优势货架网格 (4 张卡片) */
+.velocity-features-shelf {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.velocity-card {
+  background: var(--store-card);
+  border: 1px solid var(--store-border);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.velocity-card:hover {
+  border-color: var(--store-crimson);
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.08);
+}
+
+.velocity-icon-cube {
+  width: 48px;
+  height: 48px;
+  background-color: var(--store-dark);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.velocity-card-name {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: var(--store-dark);
+  margin-bottom: 0.625rem;
+  line-height: 1.3;
+}
+
+.velocity-card-desc {
+  font-size: 0.875rem;
+  color: var(--store-muted);
+  line-height: 1.6;
+}
+
+/* 流媒体与 AI 支持货架（4 张） */
+.media-deck-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.media-deck-item {
+  background: #ffffff;
+  border: 1px solid var(--store-border);
+  border-radius: 4px;
+  padding: 1.75rem 1.25rem;
+}
+
+.deck-category-pill {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: var(--store-crimson);
+  background-color: var(--store-crimson-tint);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.deck-item-title {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--store-dark);
+}
+
+.deck-item-text {
+  font-size: 0.875rem;
+  color: var(--store-muted);
+  line-height: 1.5;
+}
+
+/* 爆款套餐定价对比（必须 3 档） */
+.pricing-shelf-bg {
+  background-color: #ffffff;
+  border-top: 1px solid var(--store-border);
+  border-bottom: 1px solid var(--store-border);
+}
+
+.tier-shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.shelf-plan-card {
+  background-color: var(--store-bg);
+  border: 1px solid var(--store-border);
+  border-radius: 6px;
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.shelf-plan-card.hot-seller {
+  background-color: #ffffff;
+  border: 2px solid var(--store-crimson);
+  box-shadow: 0 8px 24px rgba(225, 29, 72, 0.12);
+}
+
+.hot-seller-ribbon {
+  position: absolute;
+  top: -12px;
+  right: 1.5rem;
+  background-color: var(--store-crimson);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 0.25rem 0.75rem;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.plan-title-bold {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 0.35rem;
+  color: var(--store-dark);
+}
+
+.plan-slogan-muted {
+  font-size: 0.875rem;
+  color: var(--store-muted);
+  min-height: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.plan-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.plan-currency-sign {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--store-dark);
+}
+
+.plan-figure-large {
+  font-size: 2.75rem;
+  font-weight: 900;
+  font-family: var(--font-price);
+  color: var(--store-dark);
+  line-height: 1;
+}
+
+.plan-figure-large.red-highlight {
+  color: var(--store-crimson);
+}
+
+.plan-period-text {
+  font-size: 0.875rem;
+  color: var(--store-muted);
+  font-weight: 600;
+}
+
+.plan-specs-group {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.plan-spec-line {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--store-text);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.spec-check-mark {
+  width: 14px;
+  height: 14px;
+  background-color: var(--store-crimson);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* FAQ 常见疑问 */
+.faq-drawer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.faq-drawer-tile {
+  background: #ffffff;
+  border: 1px solid var(--store-border);
+  border-radius: 4px;
+  padding: 1.75rem;
+}
+
+.faq-drawer-q {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--store-dark);
+  margin-bottom: 0.75rem;
+}
+
+.faq-drawer-a {
+  font-size: 0.9375rem;
+  color: var(--store-muted);
+  line-height: 1.6;
+}
+
+/* 买家真实认证评价 (4 项) */
+.buyer-proof-shelf {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.buyer-review-box {
+  background: #ffffff;
+  border: 1px solid var(--store-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buyer-stars-row {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.star-solid {
+  width: 14px;
+  height: 14px;
+  fill: #f59e0b;
+}
+
+.buyer-comment {
+  font-size: 0.875rem;
+  color: var(--store-text);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.buyer-profile-row {
+  border-top: 1px solid var(--store-border);
+  padding-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buyer-handle {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--store-dark);
+}
+
+.verified-buyer-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #15803d;
+  background-color: #dcfce7;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+}
+
+/* 官方底部：仅展示 4 个标题，各独立页面 */
+.store-bottom-colophon {
+  background-color: var(--store-dark);
+  color: #94a3b8;
+  padding: 3rem 1.5rem 2.5rem;
+  border-top: 2px solid var(--store-crimson);
+}
+
+.store-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.store-bottom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.store-bottom-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  transition: color 0.15s ease;
+}
+
+.store-bottom-link:hover {
+  color: var(--store-crimson);
+}
+
+.store-copy-tag {
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+/* 独立内容页基础框架（关于我们/条款/隐私/地图） */
+.store-legal-wrapper {
+  max-width: 860px;
+  margin: 3.5rem auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.store-legal-card {
+  background: #ffffff;
+  border: 1px solid var(--store-border);
+  padding: 3rem 2.5rem;
+  border-radius: 4px;
+}
+
+.store-legal-header {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--store-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--store-border);
+}
+
+.store-legal-topic {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--store-crimson);
+}
+
+.store-legal-text {
+  font-size: 0.9375rem;
+  color: var(--store-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.store-legal-bullets {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--store-muted);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   响应式媒体查询（移动端单列极速适配与手指轻触优化）
+   ========================================================================== */
+@media (max-width: 992px) {
+  .store-header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625rem 1rem 0.5rem;
+    gap: 0.5rem;
+  }
+  .velocity-logo-link {
+    flex-shrink: 0;
+  }
+  .store-header-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .store-header-cta .btn-store {
+    width: auto !important;
+    min-height: 36px !important;
+    padding: 0.4rem 0.85rem !important;
+    font-size: 0.8125rem !important;
+    white-space: nowrap;
+  }
+  .store-nav {
+    order: 3;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    gap: 0.4rem;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-top: 0.25rem;
+    padding: 0.35rem 0.25rem 0.35rem 0;
+    border-top: 1px solid var(--store-border);
+  }
+  .store-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .store-nav-link {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    font-size: 0.8125rem !important;
+    font-weight: 800;
+    padding: 0.4rem 0.75rem !important;
+    border-radius: 4px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+  .store-nav-link:hover, .store-nav-link:focus, .store-nav-link.active {
+    background: #fff1f2;
+    color: #e11d48;
+    border-color: #fecdd3;
+  }
+  .hero-rapid-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .velocity-features-shelf {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .media-deck-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tier-shelf-grid {
+    grid-template-columns: 1fr;
+  }
+  .buyer-proof-shelf {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-rapid-title {
+    font-size: 2rem;
+  }
+  .hero-rapid-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-rapid-actions .btn-store {
+    width: 100%;
+    min-height: 48px;
+  }
+  .velocity-features-shelf {
+    grid-template-columns: 1fr;
+  }
+  .media-deck-grid {
+    grid-template-columns: 1fr;
+  }
+  .faq-drawer-grid {
+    grid-template-columns: 1fr;
+  }
+  .buyer-proof-shelf {
+    grid-template-columns: 1fr;
+  }
+  .store-bottom-nav {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .store-legal-card {
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   全局超链接色彩与极速研报排版扩展 (Bold Velocity Commerce)
+   显著区分普通文本、匹配竞速绯红、访问前后一致、非默认蓝紫
+   ========================================================================== */
+a, a:link, a:visited {
+  color: #e11d48;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover, a:focus {
+  color: #be123c;
+  text-decoration: underline;
+}
+
+/* 导航链接重置 */
+.store-nav-link, .store-nav-link:link, .store-nav-link:visited {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--store-dark);
+  padding: 0.45rem 0.875rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.store-nav-link:hover, .store-nav-link:focus, .store-nav-link.active {
+  color: var(--store-crimson);
+  background-color: var(--store-crimson-tint);
+  text-decoration: none;
+}
+
+.store-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-store, .btn-store:link, .btn-store:visited {
+  text-decoration: none !important;
+}
+
+.btn-crimson, .btn-crimson:link, .btn-crimson:visited {
+  color: #ffffff !important;
+}
+
+.btn-speed-ghost, .btn-speed-ghost:link, .btn-speed-ghost:visited {
+  color: var(--store-dark) !important;
+}
+.btn-speed-ghost:hover {
+  color: #ffffff !important;
+}
+
+.store-bottom-link, .store-bottom-link:link, .store-bottom-link:visited {
+  color: #ffffff;
+}
+.store-bottom-link:hover {
+  color: var(--store-crimson);
+  text-decoration: none;
+}
+
+/* 极速研报大厅 */
+.velocity-hub-banner {
+  background: #ffffff;
+  padding: 4rem 1.5rem 3rem;
+  border-bottom: 2px solid var(--store-border);
+  text-align: center;
+}
+
+.velocity-hub-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--store-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.velocity-hub-sub {
+  font-size: 1.0625rem;
+  color: var(--store-muted);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.velocity-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  max-width: 1200px;
+  margin: 3.5rem auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.report-item-card {
+  background: #ffffff;
+  border: 1px solid var(--store-border);
+  border-radius: 6px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.report-item-card:hover {
+  border-color: var(--store-crimson);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.08);
+}
+
+.report-chip {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--store-crimson);
+  background-color: var(--store-crimson-tint);
+  padding: 0.25rem 0.625rem;
+  border-radius: 3px;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.report-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--store-dark);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.report-title a, .report-title a:visited {
+  color: var(--store-dark);
+}
+
+.report-title a:hover {
+  color: var(--store-crimson);
+  text-decoration: none;
+}
+
+.report-excerpt {
+  font-size: 0.9375rem;
+  color: var(--store-muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.report-card-footer {
+  border-top: 1px solid var(--store-border);
+  padding-top: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  color: var(--store-muted);
+}
+
+/* 研报详情页排版 */
+.report-paper-container {
+  max-width: 860px;
+  margin: 3.5rem auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.report-breadcrumbs {
+  font-size: 0.875rem;
+  color: var(--store-muted);
+  margin-bottom: 1.5rem;
+}
+
+.report-breadcrumbs a, .report-breadcrumbs a:visited {
+  color: var(--store-muted);
+}
+
+.report-breadcrumbs a:hover {
+  color: var(--store-crimson);
+}
+
+.report-main-paper {
+  background: #ffffff;
+  border: 1px solid var(--store-border);
+  border-radius: 6px;
+  padding: 3.5rem 3rem;
+}
+
+.report-heading-large {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--store-dark);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.report-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--store-muted);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--store-border);
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.report-body h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--store-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--store-border);
+}
+
+.report-body h3 {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: var(--store-crimson);
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.report-body p {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+.report-body ul, .report-body ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+  color: #334155;
+  line-height: 1.85;
+}
+
+.report-body li {
+  margin-bottom: 0.5rem;
+}
+
+.report-body strong {
+  color: var(--store-dark);
+  font-weight: 800;
+}
+
+.report-tip-box {
+  background: var(--store-bg);
+  border-left: 4px solid var(--store-crimson);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.report-tip-title {
+  font-weight: 900;
+  color: var(--store-dark);
+  margin-bottom: 0.35rem;
+}
+
+/* ==========================================================================
+   移动端全景导航系统 (Mobile Navigation Drawer & Hamburger Toggle)
+   零依赖纯 CSS 实现 | 100% 响应式触控友好
+   ========================================================================== */
+.mobile-nav-toggle {
+  display: none !important;
+}
+
+.mobile-nav-btn {
+  display: none !important;
+}
+
+.mobile-nav-drawer {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .velocity-symbol {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .velocity-brand-title {
+    font-size: 1.15rem !important;
+  }
+  .velocity-sub-badge {
+    font-size: 0.5625rem !important;
+    letter-spacing: 0.06em !important;
+  }
+  .store-header-inner {
+    padding: 0.5rem 0.75rem 0.4rem !important;
+    gap: 0.35rem !important;
+  }
+  .store-header-cta {
+    gap: 0.35rem !important;
+  }
+  .store-header-cta .btn-store {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.8125rem !important;
+  }
+
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  .store-header-inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625rem 1rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .store-header-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  /* 汉堡按钮设计 */
+  .mobile-nav-btn {
+    display: inline-flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    gap: 4px;
+    padding: 6px;
+    flex-shrink: 0;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-nav-btn:hover, .mobile-nav-btn:active {
+    background: #ffffff;
+    border-color: #e11d48;
+  }
+
+  .hamburger-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #0f172a;
+    border-radius: 1px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* 汉堡按钮变换为关闭 ✕ 状态 */
+  .mobile-nav-toggle:checked ~ .store-header-cta .mobile-nav-btn .hamburger-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .mobile-nav-toggle:checked ~ .store-header-cta .mobile-nav-btn .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-nav-toggle:checked ~ .store-header-cta .mobile-nav-btn .hamburger-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* 快速导航胶囊横条 (Row 2) 保持 100% 可见与触摸滚动 */
+  .store-nav {
+    order: 3;
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    gap: 0.4rem;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-top: 0.25rem;
+    padding: 0.35rem 0.25rem 0.35rem 0;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .store-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .store-nav-link {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    font-size: 0.8125rem !important;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem !important;
+    line-height: 1.2;
+  }
+
+  /* 展开式全景导航抽屉 (Row 4) */
+  .mobile-nav-drawer {
+    display: none !important;
+    order: 4;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 0.75rem 0 0.5rem;
+    animation: drawerFadeIn 0.2s ease forwards;
+  }
+
+  .mobile-nav-toggle:checked ~ .mobile-nav-drawer {
+    display: block !important;
+  }
+
+  @keyframes drawerFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .mobile-drawer-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .mobile-drawer-link {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .mobile-drawer-link:hover, .mobile-drawer-link:active {
+    background: #ffffff;
+    border-color: #e11d48;
+  }
+
+  .drawer-link-title {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+  }
+
+  .drawer-link-sub {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.2rem;
+  }
+}
